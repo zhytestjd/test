@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星宇集团 - 创新科技，引领未来</title>
+    <style>
+        /* 全局样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 导航栏 */
+        header {
+            background: #1a3e72;
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        .nav-links li {
+            margin-left: 30px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .nav-links a:hover {
+            color: #4fc3f7;
+        }
+
+        /* 英雄区域 */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://via.placeholder.com/1920x600') center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        .hero-content p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        .btn {
+            display: inline-block;
+            background: #4fc3f7;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            background: #3da8d8;
+        }
+
+        /* 企业介绍 */
+        .about {
+            padding: 80px 0;
+            background: white;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 36px;
+            color: #1a3e72;
+        }
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        .about-text {
+            flex: 1;
+        }
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* 营业范围 */
+        .services {
+            padding: 80px 0;
+            background: #f1f5f9;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        .service-icon {
+            font-size: 50px;
+            color: #4fc3f7;
+            margin-bottom: 20px;
+        }
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: #1a3e72;
+        }
+
+        /* 案例展示 */
+        .portfolio {
+            padding: 80px 0;
+            background: white;
+        }
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .portfolio-item {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 250px;
+        }
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.3s;
+        }
+        .portfolio-item:hover img {
+            transform: scale(1.1);
+        }
+        .portfolio-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(26, 62, 114, 0.8);
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: 0.3s;
+        }
+        .portfolio-item:hover .portfolio-overlay {
+            transform: translateY(0);
+        }
+
+        /* 页脚 */
+        footer {
+            background: #1a3e72;
+            color: white;
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        .footer-links li {
+            margin: 0 15px;
+        }
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+        }
+        .copyright {
+            opacity: 0.7;
+            font-size: 14px;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero-content h1 {
+                font-size: 36px;
+            }
+            .about-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">星宇集团</div>
+                <ul class="nav-links">
+                    <li><a href="#about">企业介绍</a></li>
+                    <li><a href="#services">营业范围</a></li>
+                    <li><a href="#portfolio">成功案例</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 英雄区域 -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>创新科技，引领未来</h1>
+                <p>星宇集团致力于为客户提供最前沿的科技解决方案，推动行业数字化转型</p>
+                <a href="#contact" class="btn">联系我们</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 企业介绍 -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">企业介绍</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>星宇集团成立于2010年，是一家专注于高科技产业发展的综合性企业集团。经过十余年的快速发展，我们已成为行业内的领先企业。</p>
+                    <p>集团总部位于上海，在北京、深圳、香港等地设有分支机构，员工总数超过2000人，其中研发人员占比40%。</p>
+                    <p>我们始终秉持"创新、协作、责任"的核心价值观，致力于通过技术创新推动社会进步。</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://via.placeholder.com/600x400" alt="星宇集团总部大楼">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 营业范围 -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">营业范围</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3>人工智能解决方案</h3>
+                    <p>为企业提供定制化AI解决方案，包括计算机视觉、自然语言处理等领域的应用开发。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>数字化转型咨询</h3>
+                    <p>帮助传统企业制定数字化转型战略，提供从规划到实施的一站式服务。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌐</div>
+                    <h3>云计算服务</h3>
+                    <p>提供安全可靠的云基础设施服务，包括私有云部署和混合云管理解决方案。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔒</div>
+                    <h3>网络安全服务</h3>
+                    <p>为企业提供全方位的网络安全评估、防护和应急响应服务。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3>大数据分析</h3>
+                    <p>利用先进的大数据技术，帮助企业挖掘数据价值，优化商业决策。</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🤖</div>
+                    <h3>工业自动化</h3>
+                    <p>为制造业客户提供智能工厂解决方案，实现生产流程的自动化与智能化。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 案例展示 -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">成功案例</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/600x400" alt="金融行业案例">
+                    <div class="portfolio-overlay">
+                        <h3>某大型银行智能风控系统</h3>
+                        <p>通过AI技术实现实时交易监控，风险识别准确率提升40%</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/600x400" alt="制造业案例">
+                    <div class="portfolio-overlay">
+                        <h3>汽车制造智能工厂</h3>
+                        <p>实现生产全流程自动化，生产效率提升35%</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/600x400" alt="零售业案例">
+                    <div class="portfolio-overlay">
+                        <h3>零售连锁企业数字化转型</h3>
+                        <p>构建全渠道销售系统，客户留存率提升50%</p>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="https://via.placeholder.com/600x400" alt="医疗行业案例">
+                    <div class="portfolio-overlay">
+                        <h3>医疗影像AI辅助诊断系统</h3>
+                        <p>辅助医生提高诊断效率，准确率达95%以上</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">联系我们</h2>
+            <div style="text-align: center; margin-bottom: 50px;">
+                <p>地址：上海市浦东新区张江高科技园区科苑路88号</p>
+                <p>电话：+86 21 5888 8888</p>
+                <p>邮箱：info@xingyugroup.com</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <ul class="footer-links">
+                <li><a href="#about">关于我们</a></li>
+                <li><a href="#services">服务</a></li>
+                <li><a href="#portfolio">案例</a></li>
+                <li><a href="#contact">联系</a></li>
+                <li><a href="#">隐私政策</a></li>
+            </ul>
+            <p class="copyright">© 2023 星宇集团 版权所有</p>
+        </div>
+    </footer>
+</body>
+</html>
